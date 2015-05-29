@@ -1,0 +1,496 @@
+Script started on Sun 23 Nov 2014 06:59:39 PM EST
+]0;aditya@aditya-laptop: ~/video/CIS551_HW3_phase1_ver2aditya@aditya-laptop:~/video/CIS551_HW3_phase1_ver2$ ffplay video.avi mpeg -f h264 -i a2b_contents.dat video.avils -l *.dat[K[3P*.dat[Ktcptrace -e vid4.pcap ls[Kcd ..ffmpeg -f h264 -i g2h_contents.dat video.avils[Kffmpeg -f h264 -i video33.pcap video.avils[Kffmpeg -f h264 -i g2h_contents.dat video.avicd ..[K[3Plscd ..ffmpeg -f h264 -i g2h_contents.dat video.avils[Kffmpeg -f h264 -i video33.pcap video.avils -l[Ktcptrace -e video33.pcap ls[Krm *.datls[Kffplay g2h_contents.dat ls -l[K[Ktcptrace -e video33.pcap rm *.dat[Kls[Kffplay a2b_contents.dat ls[Ktcptrace -e video22.pcap ls[Ktcptrace -e video22.pcap ls[Kffplay a2b_contents.dat ls[Krm *.dattcptrace -e video33.pcap ls[K -lffplay g2h_contents.dat ls[Krm *.datls[Ktcptrace -e video33.pcap ls -l[Kffmpeg -f h264 -i video33.pcap video.avils[Kffmpeg -f h264 -i g2h_contents.dat video.avicd ..[K[3Plstcptrace -e vid4.pcap ls[K *.dat-l *.datffmpeg -f h264 -i a2b_contents.dat video.avi[27Pplay video.avi [Kffplay video.avi mpeg -f h264 -i a2b_contents.dat video.avils -l *.dat[K[3P*.dat[Ktcptrace -e vid4.pcap [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcat Makefile 
+all: attack
+
+attack: video_capture.pcap
+	tcptrace -e video_capture.pcap
+	ffmpeg -f h264 -i am2an_contents.dat video_capture.avi
+	ffplay video_capture.avi
+
+clean:
+	rm *.dat
+	rm video_capture.avi
+]0;aditya@aditya-laptop: ~/video/CIS551_HW3_phase1_ver2aditya@aditya-laptop:~/video/CIS551_HW3_phase1_ver2$ make clean
+rm *.dat
+rm: cannot remove `*.dat': No such file or directory
+make: *** [clean] Error 1
+]0;aditya@aditya-laptop: ~/video/CIS551_HW3_phase1_ver2aditya@aditya-laptop:~/video/CIS551_HW3_phase1_ver2$ [H[2J]0;aditya@aditya-laptop: ~/video/CIS551_HW3_phase1_ver2aditya@aditya-laptop:~/video/CIS551_HW3_phase1_ver2$ ls
+log.txt  Makefile  ReadMe.txt  video_capture.pcap  [0m[01;35mvideo_demo.avi[0m
+[m]0;aditya@aditya-laptop: ~/video/CIS551_HW3_phase1_ver2aditya@aditya-laptop:~/video/CIS551_HW3_phase1_ver2$ make attack
+tcptrace -e video_capture.pcap
+1 arg remaining, starting with 'video_capture.pcap'
+Ostermann's tcptrace -- version 6.6.7 -- Thu Nov  4, 2004
+
+8285 packets seen, 7308 TCP packets traced
+elapsed wallclock time: 0:00:10.152643, 816 pkts/sec analyzed
+trace file elapsed time: 0:00:58.520715
+TCP connection info:
+  1: 192.168.1.1:5551 - 192.168.1.5:61619 (a2b)       7>    0<  (unidirectional)
+  2: 192.168.1.1:56568 - 192.168.1.5:61620 (c2d)      4>    0<  (unidirectional)
+  3: 192.168.1.1:5555 - 192.168.1.5:61621 (e2f)     370>    0<  (unidirectional)
+  4: 192.168.1.1:5559 - 192.168.1.5:61622 (g2h)       2>    0<  (unidirectional)
+  5: 192.168.1.1:21 - 192.168.1.5:61623 (i2j)        10>    0<  (unidirectional)
+  6: 192.168.1.1:35266 - 192.168.1.5:61624 (k2l)      3>    0<  (unidirectional)
+  7: 192.168.1.1:5559 - 192.168.1.5:61626 (m2n)       9>    0<  (unidirectional)
+  8: 192.168.1.1:21 - 192.168.1.5:61627 (o2p)        11>    0<  (unidirectional)
+  9: 192.168.1.1:49086 - 192.168.1.5:61628 (q2r)      3>    0<  (unidirectional)
+ 10: 192.168.1.1:5551 - 192.168.1.5:61629 (s2t)      11>    0<  (unidirectional)
+ 11: 192.168.1.1:39557 - 192.168.1.5:61630 (u2v)      4>    0<  (unidirectional)
+ 12: 192.168.1.1:5553 - 192.168.1.5:61625 (w2x)       2>    0<  (unidirectional)
+ 13: 192.168.1.1:5551 - 192.168.1.5:61631 (y2z)      11>    0<  (unidirectional)
+ 14: 192.168.1.1:42825 - 192.168.1.5:61632 (aa2ab)    4>    0<  (unidirectional)
+ 15: 192.168.1.1:5555 - 192.168.1.5:61633 (ac2ad)    24>    0<  (unidirectional)
+ 16: 192.168.1.1:5559 - 192.168.1.5:61634 (ae2af)     2>    0<  (unidirectional)
+ 17: 192.168.1.1:5555 - 192.168.1.5:61635 (ag2ah)    81>    0<  (unidirectional)
+ 18: 192.168.1.1:5553 - 192.168.1.5:61636 (ai2aj)     2>    0<  (unidirectional)
+ 19: 192.168.1.1:5559 - 192.168.1.5:61637 (ak2al)    10>    0<  (unidirectional)
+ 20: 192.168.1.1:5555 - 192.168.1.5:61638 (am2an)  6687>    0<  (unidirectional)
+ 21: 192.168.1.1:5553 - 192.168.1.5:61639 (ao2ap)     1>    0<  (unidirectional)
+ 22: 192.168.1.1:5551 - 192.168.1.5:61640 (aq2ar)    12>    0<  (unidirectional)
+ 23: 192.168.1.1:45250 - 192.168.1.5:61641 (as2at)   38>    0<  (unidirectional)
+
+Warning : some extracted files are incomplete!
+          Please see -l output for more detail.
+ffmpeg -f h264 -i am2an_contents.dat video_capture.avi
+FFmpeg version SVN-r0.5.9-4:0.5.9-0ubuntu0.10.04.3, Copyright (c) 2000-2009 Fabrice Bellard, et al.
+  configuration: --extra-version=4:0.5.9-0ubuntu0.10.04.3 --prefix=/usr --enable-avfilter --enable-avfilter-lavf --enable-vdpau --enable-bzlib --enable-libgsm --enable-libschroedinger --enable-libspeex --enable-libtheora --enable-libvorbis --enable-pthreads --enable-zlib --disable-stripping --disable-vhook --enable-runtime-cpudetect --enable-gpl --enable-postproc --enable-swscale --enable-x11grab --enable-libdc1394 --enable-shared --disable-static
+  libavutil     49.15. 0 / 49.15. 0
+  libavcodec    52.20. 1 / 52.20. 1
+  libavformat   52.31. 0 / 52.31. 0
+  libavdevice   52. 1. 0 / 52. 1. 0
+  libavfilter    0. 4. 0 /  0. 4. 0
+  libswscale     0. 7. 1 /  0. 7. 1
+  libpostproc   51. 2. 0 / 51. 2. 0
+  built on Jan 24 2013 19:42:21, gcc: 4.4.3
+[NULL @ 0x9fe4510]non-existing PPS referenced
+[h264 @ 0x9fe4510]non-existing PPS referenced
+[h264 @ 0x9fe4510]decode_slice_header error
+[h264 @ 0x9fe4510]no frame!
+[h264 @ 0x9fe4510]non-existing PPS referenced
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]decode_slice_header error
+[h264 @ 0x9fe4510]no frame!
+[h264 @ 0x9fe4510]non-existing PPS referenced
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]decode_slice_header error
+[h264 @ 0x9fe4510]no frame!
+[h264 @ 0x9fe4510]non-existing PPS referenced
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]decode_slice_header error
+[h264 @ 0x9fe4510]no frame!
+[h264 @ 0x9fe4510]non-existing PPS referenced
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]decode_slice_header error
+[h264 @ 0x9fe4510]no frame!
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+
+Seems stream 0 codec frame rate differs from container frame rate: 50.00 (50/1) -> 25.00 (50/2)
+Input #0, h264, from 'am2an_contents.dat':
+  Duration: N/A, bitrate: N/A
+    Stream #0.0: Video: h264, yuv420p, 640x360, 25 tbr, 1200k tbn, 50 tbc
+Output #0, avi, to 'video_capture.avi':
+    Stream #0.0: Video: mpeg4, yuv420p, 640x360, q=2-31, 200 kb/s, 90k tbn, 25 tbc
+Stream mapping:
+  Stream #0.0 -> #0.0
+[mpeg4 @ 0xa00a4a0]removing common factors from framerate
+Press [q] to stop encoding
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+    Last message repeated 6 times
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 8 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 2 times
+[h264 @ 0x9fe4510]corrupted macroblock 38 8 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 38 8
+[h264 @ 0x9fe4510]concealing 611 DC, 611 AC, 611 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]negative number of zero coeffs at 12 19
+[h264 @ 0x9fe4510]error while decoding MB 12 19
+[h264 @ 0x9fe4510]concealing 197 DC, 197 AC, 197 MV errors
+[h264 @ 0x9fe4510]out of range intra chroma pred mode at 3 5
+[h264 @ 0x9fe4510]error while decoding MB 3 5
+[h264 @ 0x9fe4510]concealing 766 DC, 766 AC, 766 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 13 15 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 13 15
+[h264 @ 0x9fe4510]concealing 356 DC, 356 AC, 356 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 4 times
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 13 20
+[h264 @ 0x9fe4510]error while decoding MB 13 20
+[h264 @ 0x9fe4510]concealing 156 DC, 156 AC, 156 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 2 times
+[h264 @ 0x9fe4510]corrupted macroblock 2 21 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 2 21
+[h264 @ 0x9fe4510]concealing 127 DC, 127 AC, 127 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 17 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 17 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 3 times
+[h264 @ 0x9fe4510]corrupted macroblock 24 22 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 24 22
+[h264 @ 0x9fe4510]concealing 65 DC, 65 AC, 65 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  102 fps=  0 q=2.0 size=     222kB time=4.08 bitrate= 445.8kbits/s        Last message repeated 28 times
+[h264 @ 0x9fe4510]concealing 409 DC, 409 AC, 409 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 6 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 15 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 4 times
+[h264 @ 0x9fe4510]corrupted macroblock 22 15 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 22 15
+[h264 @ 0x9fe4510]concealing 347 DC, 347 AC, 347 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 3 times
+[h264 @ 0x9fe4510]corrupted macroblock 10 4 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 10 4
+[h264 @ 0x9fe4510]concealing 799 DC, 799 AC, 799 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 24 times
+[h264 @ 0x9fe4510]concealing 27 DC, 27 AC, 27 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 9 18 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 9 18
+[h264 @ 0x9fe4510]concealing 240 DC, 240 AC, 240 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 8 times
+[h264 @ 0x9fe4510]corrupted macroblock 18 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 18 5
+[h264 @ 0x9fe4510]concealing 751 DC, 751 AC, 751 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 8 6 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 8 6
+[h264 @ 0x9fe4510]concealing 721 DC, 721 AC, 721 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 8 times
+[h264 @ 0x9fe4510]negative number of zero coeffs at 5 15
+[h264 @ 0x9fe4510]error while decoding MB 5 15
+[h264 @ 0x9fe4510]concealing 364 DC, 364 AC, 364 MV errors
+frame=  188 fps=186 q=5.6 size=     476kB time=7.52 bitrate= 518.5kbits/s    [h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 14 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 2 times
+[h264 @ 0x9fe4510]corrupted macroblock 20 11 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 20 11
+[h264 @ 0x9fe4510]concealing 509 DC, 509 AC, 509 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 8 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 25 20 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 25 20
+[h264 @ 0x9fe4510]concealing 144 DC, 144 AC, 144 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 5 times
+[h264 @ 0x9fe4510]corrupted macroblock 15 18 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 15 18
+[h264 @ 0x9fe4510]concealing 234 DC, 234 AC, 234 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 8 times
+[h264 @ 0x9fe4510]corrupted macroblock 25 18 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 25 18
+[h264 @ 0x9fe4510]concealing 224 DC, 224 AC, 224 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 13 times
+[h264 @ 0x9fe4510]negative number of zero coeffs at 12 7
+[h264 @ 0x9fe4510]error while decoding MB 12 7
+[h264 @ 0x9fe4510]concealing 677 DC, 677 AC, 677 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 13 times
+[h264 @ 0x9fe4510]corrupted macroblock 3 21 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 3 21
+[h264 @ 0x9fe4510]concealing 126 DC, 126 AC, 126 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  277 fps=183 q=8.2 size=     630kB time=11.08 bitrate= 465.8kbits/s        Last message repeated 10 times
+[h264 @ 0x9fe4510]top block unavailable for requested intra4x4 mode -1 at 35 0
+[h264 @ 0x9fe4510]error while decoding MB 35 0
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 11 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 29 times
+[h264 @ 0x9fe4510]corrupted macroblock 13 6 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 13 6
+[h264 @ 0x9fe4510]concealing 716 DC, 716 AC, 716 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 22 12 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 22 12
+[h264 @ 0x9fe4510]concealing 467 DC, 467 AC, 467 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 17 times
+[h264 @ 0x9fe4510]corrupted macroblock 12 10 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 12 10
+[h264 @ 0x9fe4510]concealing 557 DC, 557 AC, 557 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 21 times
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 8 14
+[h264 @ 0x9fe4510]error while decoding MB 8 14
+[h264 @ 0x9fe4510]concealing 401 DC, 401 AC, 401 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  368 fps=182 q=8.5 size=     755kB time=14.72 bitrate= 420.0kbits/s        Last message repeated 1 times
+[h264 @ 0x9fe4510]corrupted macroblock 21 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 21 5
+[h264 @ 0x9fe4510]concealing 748 DC, 748 AC, 748 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 22 times
+[h264 @ 0x9fe4510]corrupted macroblock 20 21 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 20 21
+[h264 @ 0x9fe4510]concealing 109 DC, 109 AC, 109 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 10 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 36 times
+[h264 @ 0x9fe4510]negative number of zero coeffs at 17 2
+[h264 @ 0x9fe4510]error while decoding MB 17 2
+[h264 @ 0x9fe4510]concealing 872 DC, 872 AC, 872 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 20 22 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 20 22
+[h264 @ 0x9fe4510]concealing 69 DC, 69 AC, 69 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  460 fps=183 q=11.6 size=     847kB time=18.40 bitrate= 377.0kbits/s        Last message repeated 34 times
+[h264 @ 0x9fe4510]corrupted macroblock 20 18 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 20 18
+[h264 @ 0x9fe4510]concealing 229 DC, 229 AC, 229 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 6 times
+[h264 @ 0x9fe4510]corrupted macroblock 7 15 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 7 15
+[h264 @ 0x9fe4510]concealing 362 DC, 362 AC, 362 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 6 times
+[h264 @ 0x9fe4510]corrupted macroblock 11 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 11 5
+[h264 @ 0x9fe4510]concealing 758 DC, 758 AC, 758 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 10 times
+[h264 @ 0x9fe4510]corrupted macroblock 11 6 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 11 6
+[h264 @ 0x9fe4510]concealing 718 DC, 718 AC, 718 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 16 times
+[h264 @ 0x9fe4510]corrupted macroblock 24 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 24 5
+[h264 @ 0x9fe4510]concealing 745 DC, 745 AC, 745 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 7 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  548 fps=181 q=13.4 size=     939kB time=21.92 bitrate= 350.9kbits/s        Last message repeated 8 times
+[h264 @ 0x9fe4510]corrupted macroblock 4 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 4 5
+[h264 @ 0x9fe4510]concealing 765 DC, 765 AC, 765 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 7 times
+[h264 @ 0x9fe4510]corrupted macroblock 22 15 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 22 15
+[h264 @ 0x9fe4510]concealing 347 DC, 347 AC, 347 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 29 17 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 29 17
+[h264 @ 0x9fe4510]concealing 260 DC, 260 AC, 260 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 2 5
+[h264 @ 0x9fe4510]error while decoding MB 2 5
+[h264 @ 0x9fe4510]concealing 767 DC, 767 AC, 767 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 32 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 4 times
+[h264 @ 0x9fe4510]concealing 732 DC, 732 AC, 732 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]corrupted macroblock 21 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 21 5
+[h264 @ 0x9fe4510]concealing 748 DC, 748 AC, 748 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 8 times
+[h264 @ 0x9fe4510]corrupted macroblock 0 11 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 0 11
+[h264 @ 0x9fe4510]concealing 529 DC, 529 AC, 529 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 14 times
+[h264 @ 0x9fe4510]corrupted macroblock 21 21 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 21 21
+[h264 @ 0x9fe4510]concealing 108 DC, 108 AC, 108 MV errors
+frame=  634 fps=180 q=14.2 size=    1018kB time=25.36 bitrate= 328.9kbits/s    [h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]concealing 736 DC, 736 AC, 736 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 2 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 3 times
+[h264 @ 0x9fe4510]corrupted macroblock 10 7 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 10 7
+[h264 @ 0x9fe4510]concealing 679 DC, 679 AC, 679 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 2 times
+[h264 @ 0x9fe4510]corrupted macroblock 26 19 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 26 19
+[h264 @ 0x9fe4510]concealing 183 DC, 183 AC, 183 MV errors
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 24 5
+[h264 @ 0x9fe4510]error while decoding MB 24 5
+[h264 @ 0x9fe4510]concealing 745 DC, 745 AC, 745 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]corrupted macroblock 20 19 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 20 19
+[h264 @ 0x9fe4510]concealing 189 DC, 189 AC, 189 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 16 times
+[h264 @ 0x9fe4510]corrupted macroblock 27 10 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 27 10
+[h264 @ 0x9fe4510]concealing 542 DC, 542 AC, 542 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 18 12
+[h264 @ 0x9fe4510]error while decoding MB 18 12
+[h264 @ 0x9fe4510]concealing 471 DC, 471 AC, 471 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 5 times
+[h264 @ 0x9fe4510]corrupted macroblock 4 21 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 4 21
+[h264 @ 0x9fe4510]concealing 125 DC, 125 AC, 125 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  723 fps=179 q=10.7 size=    1100kB time=28.92 bitrate= 311.5kbits/s        Last message repeated 38 times
+[h264 @ 0x9fe4510]corrupted macroblock 38 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 38 5
+[h264 @ 0x9fe4510]concealing 731 DC, 731 AC, 731 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 8 times
+[h264 @ 0x9fe4510]corrupted macroblock 14 15 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 14 15
+[h264 @ 0x9fe4510]concealing 355 DC, 355 AC, 355 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 25 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 2 times
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 3 times
+[h264 @ 0x9fe4510]corrupted macroblock 1 20 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 1 20
+[h264 @ 0x9fe4510]concealing 168 DC, 168 AC, 168 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]concealing 481 DC, 481 AC, 481 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 11 15
+[h264 @ 0x9fe4510]error while decoding MB 11 15
+[h264 @ 0x9fe4510]concealing 358 DC, 358 AC, 358 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  812 fps=179 q=15.9 size=    1187kB time=32.48 bitrate= 299.3kbits/s        Last message repeated 40 times
+[h264 @ 0x9fe4510]negative number of zero coeffs at 27 7
+[h264 @ 0x9fe4510]error while decoding MB 27 7
+[h264 @ 0x9fe4510]concealing 662 DC, 662 AC, 662 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 40 times
+[h264 @ 0x9fe4510]corrupted macroblock 39 11 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 39 11
+[h264 @ 0x9fe4510]concealing 490 DC, 490 AC, 490 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 13 times
+[h264 @ 0x9fe4510]corrupted macroblock 28 1 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 28 1
+[h264 @ 0x9fe4510]concealing 901 DC, 901 AC, 901 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  903 fps=179 q=9.3 size=    1262kB time=36.12 bitrate= 286.3kbits/s        Last message repeated 43 times
+[h264 @ 0x9fe4510]corrupted macroblock 2 21 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 2 21
+[h264 @ 0x9fe4510]concealing 127 DC, 127 AC, 127 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 7 times
+[h264 @ 0x9fe4510]corrupted macroblock 29 17 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 29 17
+[h264 @ 0x9fe4510]concealing 260 DC, 260 AC, 260 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 5 times
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 35 12
+[h264 @ 0x9fe4510]error while decoding MB 35 12
+[h264 @ 0x9fe4510]concealing 454 DC, 454 AC, 454 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 7 times
+[h264 @ 0x9fe4510]corrupted macroblock 25 4 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 25 4
+[h264 @ 0x9fe4510]concealing 784 DC, 784 AC, 784 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+    Last message repeated 1 times
+[h264 @ 0x9fe4510]corrupted macroblock 14 19 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 14 19
+[h264 @ 0x9fe4510]concealing 195 DC, 195 AC, 195 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]corrupted macroblock 18 20 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 18 20
+[h264 @ 0x9fe4510]concealing 151 DC, 151 AC, 151 MV errors
+[h264 @ 0x9fe4510]number of reference frames exceeds max (probably corrupt input), discarding one
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame=  991 fps=179 q=12.2 size=    1359kB time=39.64 bitrate= 280.8kbits/s        Last message repeated 85 times
+[h264 @ 0x9fe4510]corrupted macroblock 6 12 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 6 12
+[h264 @ 0x9fe4510]concealing 483 DC, 483 AC, 483 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 29 times
+[h264 @ 0x9fe4510]cbp too large (4294967295) at 13 12
+[h264 @ 0x9fe4510]error while decoding MB 13 12
+[h264 @ 0x9fe4510]concealing 476 DC, 476 AC, 476 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+frame= 1085 fps=180 q=14.1 size=    1437kB time=43.40 bitrate= 271.2kbits/s        Last message repeated 33 times
+[h264 @ 0x9fe4510]corrupted macroblock 25 5 (total_coeff=-1)
+[h264 @ 0x9fe4510]error while decoding MB 25 5
+[h264 @ 0x9fe4510]concealing 744 DC, 744 AC, 744 MV errors
+[h264 @ 0x9fe4510]concealing 920 DC, 920 AC, 920 MV errors
+    Last message repeated 55 times
+[h264 @ 0x9fe4510]missing picture in access unit
+frame= 1163 fps=180 q=16.1 Lsize=    1532kB time=46.52 bitrate= 269.8kbits/s    
+video:1499kB audio:0kB global headers:0kB muxing overhead 2.225451%
+ffplay video_capture.avi
+FFplay version SVN-r0.5.9-4:0.5.9-0ubuntu0.10.04.3, Copyright (c) 2003-2009 Fabrice Bellard, et al.
+  configuration: --extra-version=4:0.5.9-0ubuntu0.10.04.3 --prefix=/usr --enable-avfilter --enable-avfilter-lavf --enable-vdpau --enable-bzlib --enable-libgsm --enable-libschroedinger --enable-libspeex --enable-libtheora --enable-libvorbis --enable-pthreads --enable-zlib --disable-stripping --disable-vhook --enable-runtime-cpudetect --enable-gpl --enable-postproc --enable-swscale --enable-x11grab --enable-libdc1394 --enable-shared --disable-static
+  libavutil     49.15. 0 / 49.15. 0
+  libavcodec    52.20. 1 / 52.20. 1
+  libavformat   52.31. 0 / 52.31. 0
+  libavdevice   52. 1. 0 / 52. 1. 0
+  libavfilter    0. 4. 0 /  0. 4. 0
+  libswscale     0. 7. 1 /  0. 7. 1
+  libpostproc   51. 2. 0 / 51. 2. 0
+  built on Jan 24 2013 19:42:21, gcc: 4.4.3
+]0;aditya@aditya-laptop: ~/video/CIS551_HW3_phase1_ver2aditya@aditya-laptop:~/video/CIS551_HW3_phase1_ver2$ make clean
+rm *.dat
+rm video_capture.avi
+]0;aditya@aditya-laptop: ~/video/CIS551_HW3_phase1_ver2aditya@aditya-laptop:~/video/CIS551_HW3_phase1_ver2$ exit
+
+Script done on Sun 23 Nov 2014 07:02:42 PM EST
